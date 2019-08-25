@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { Component }from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CharacterCard from "./components/CharacterCard";
+import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
+
+
+
 
 function App() {
   return (
