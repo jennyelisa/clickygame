@@ -1,0 +1,62 @@
+[
+    {
+      "id": 1,
+      "name": "Cuphead",
+      "image": "https://vignette.wikia.nocookie.net/cuphead/images/6/65/Cuphoof.png/revision/latest/scale-to-width-down/160?cb=20181020175810"
+    },
+    {
+        "id": 2,
+        "name": "Mugman",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/9/9e/Mugman_results.png/revision/latest?cb=20171209225949"
+      },
+      {
+        "id": 3,
+        "name": "King Dice",
+        "image": "https://giantbomb1.cbsistatic.com/uploads/square_small/37/375443/3011181-cuphead_king_dice_sprite.png"
+      },
+      {
+        "id": 4,
+        "name": "Ms. Chalice",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/7/72/Ms._Chalice_Infobox_Image.png/revision/latest?cb=20180612000720"
+      },
+      {
+        "id": 5,
+        "name": "Cala Maria",
+        "image": "https://vignette.wikia.nocookie.net/great-characters/images/7/79/Cala_Maria.png/revision/latest?cb=20180618052336"
+      },
+      {
+        "id": 6,
+        "name": "Baroness Von Bon Bon",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/a/a1/BVBBintro.png/revision/latest?cb=20171213192755"
+      },
+      {
+        "id": 7,
+        "name": "Captin Brineybeard",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/d/de/HELP_ME.png/revision/latest?cb=20180302065309"
+      },
+      {
+        "id": 8,
+        "name": "Ribby and Croaks",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/3/3b/Ribby_and_Croaks.png/revision/latest?cb=20180224193508"
+      },
+      {
+        "id": 9,
+        "name": "Grim Matchstick",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/0/06/Drag_mor.png/revision/latest/scale-to-width-down/241?cb=20171024022720"
+      },
+      {
+        "id": 10,
+        "name": "Hilda Berg",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/b/b6/Hilda_Berg_Intro_Sprite.png/revision/latest?cb=20180420205506"
+      },
+      {
+        "id": 11,
+        "name": "Djimmi The Great",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/8/8c/Genie.png/revision/latest/scale-to-width-down/158?cb=20171028124603"
+      },
+      {
+        "id": 12,
+        "name": "Sally Stageplay",
+        "image": "https://vignette.wikia.nocookie.net/cuphead/images/6/6a/Sally_Stageplay_Normal_Sprite.png/revision/latest/scale-to-width-down/310?cb=20180409204958"
+      }
+]
