@@ -6,6 +6,7 @@ function CharacterCard(props) {
         <div className="card" onClick={() => props.clickCount(props.id)}>
         <div className="img-container">
           <img alt={props.name} src={props.image} />
+          onClick={() => props.shuffleImgs(props.id)} className="shuffleScore"
         </div>
       </div>
     );
