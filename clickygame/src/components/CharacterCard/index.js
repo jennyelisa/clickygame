@@ -3,14 +3,15 @@ import "./style.css"
 
 function CharacterCard(props) {
     return (
-        <div className="card" onClick={() => props.clickCount(props.id)}>
-        <div className="img-container">
+    
+        <div key={props.id} className="cupheadChara" onClick={() => props.userClicks(props.id)}>
           <img alt={props.name} src={props.image} />
-          onClick={() => props.shuffleImages(props.id)} className="shuffleImages"
+          {/* onClick={() => props.shuffleImages(props.id)} className="shuffleImages" */}
         </div>
-      </div>
+    
     );
 }
 
 export default CharacterCard;
 
+///card div around img-container div to create card around each image. 
