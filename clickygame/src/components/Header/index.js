@@ -6,9 +6,9 @@ const Header = props => (
         <h1>CupHead</h1>
         <div className="stats">
         <label>Score: {props.clickedImg}</label>
-        <label>High Score: {props.highScore}</label>
         <label>Wins: {props.wins}</label>
         <label>Losses: {props.losses}</label>
+         <label>High Score: {props.highScore}</label>
         </div>
     </div>
 );

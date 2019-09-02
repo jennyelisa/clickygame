@@ -5,5 +5,9 @@
      height: 150px;
      margin: 12px;
      float: left;
-     
    }
+
+   .cupheadChara:hover {
+     opacity: 0.3;
+   }
+

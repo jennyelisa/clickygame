@@ -9,16 +9,16 @@ import characters from "./characters.json"
 
 
 
-const shuffleImages = chara => {
-  for (let i = chara.length - 1; i > 0; i--) {
+const shuffleImages = array => {
+  for (let i = array.length - 1; i > 0; i--) {
     let k = Math.floor(Math.random() * (i + 1));
-    let j = chara[k];
+    let j = array[k];
 
-    chara[k] = chara[i]
-    chara[i] = j
+    array[k] = array[i]
+    array[i] = j
   }
 
-  return chara;
+  return array;
 }
 
 
@@ -27,37 +27,48 @@ class App extends Component {
   state = {
     characters,
     clickedImgs: [],
-    clickCount: 0,
     wins: 0,
     losses: 0,
-    highScore: 0
+    highScore: 0,
+    score: 0
   };
 
 userClicks = (id) => {
   let clickedImgs = this.state.clickedImgs;
-  let { highScore, clickCount } = this.state
-
+  let score = this.state.score;
+  let highScore = this.state.highScore;
   console.log(shuffleImages)
+  //working but when you click second image it breaks
 
-  if (clickedImgs.indexOf(id) > -1) {
-    this.setState({ clickedImgs: [], clickCount: 0, losses: this.state.losses + 1})
+  if (clickedImgs.indexOf(id) === -1) {
+    clickedImgs.push(id);
+    this.incrementScore();
+    this.charaShuffle();
+  } else if (this.state.score === 12 ){
+    alert("You Win 🥳 🏆");
+    this.setState({ 
+      score: 0,
+      clickedImgs: []
+    });
+
   } else {
-    clickCount++
-    clickedImgs.push(id)
-    this.setState({ clickedImgs: shuffleImages, clickCount: clickCount})
+    this.setState({
+      score: 0,
+      clickedImgs: []
+    });
+    alert("I won't sugarcoat it...you never stood a chance! - Baroness Von Bon Bon, Try Again!")
+  } 
+  if ( score > highScore) {
+  this.setState({ highScore: score })
+} 
+};
 
-    if (clickCount > highScore) {
-      this.setState({ highScore: clickCount })
-    }
+incrementScore = () => {
+  this.setState({ score: this.state.score + 1 });
+};
 
-    if( clickCount % characters.length === 0) {
-      this.setState({clickedImgs: [], wins: this.state.wins + 1})
-    }
-  }
-
-  this.setState({ characters: shuffleImages(characters)});
-
-  
+charaShuffle = () => {
+  this.setState({ characters: shuffleImages(characters)})
 };
 
   render() {
@@ -65,7 +76,7 @@ userClicks = (id) => {
 
       <div>
         <Header
-        clickedImgs={this.state.clickCount}
+        clickedImgs={this.state.score}
         highScore={this.state.highScore}
         wins={this.state.wins}
         losses={this.state.losses}
