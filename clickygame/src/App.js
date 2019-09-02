@@ -1,10 +1,25 @@
 import React, { Component }from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import CharacterCard from "./components/CharacterCard";
-import Wrapper from "./components/Wrapper";
+import Header from "./components/Header"
+// import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import characters from "./characters.json"
+
+
+
+const shuffleImages = chara => {
+  for (let i = chara.length - 1; i > 0; i--) {
+    let k = Math.floor(Math.random() * (i + 1));
+    let j = chara[k];
+
+    chara[k] = chara[i]
+    chara[i] = j
+  }
+
+  return chara;
+}
 
 
 class App extends Component {
@@ -12,66 +27,61 @@ class App extends Component {
   state = {
     characters,
     clickedImgs: [],
-    score: 0,
+    clickCount: 0,
+    wins: 0,
+    losses: 0,
     highScore: 0
   };
 
-shuffleImages = id => {
+userClicks = (id) => {
   let clickedImgs = this.state.clickedImgs;
+  let { highScore, clickCount } = this.state
 
-  if (clickedImgs.includes(id)) {
-    this.setState({
-      clickedImgs: [],
-      score: 0,
-      status: "Gmae Over! Click again!"
-    });
-    return;
+  console.log(shuffleImages)
+
+  if (clickedImgs.indexOf(id) > -1) {
+    this.setState({ clickedImgs: [], clickCount: 0, losses: this.state.losses + 1})
   } else {
+    clickCount++
     clickedImgs.push(id)
-    if (clickedImgs.length === 12) {
-      this.ListeningStateChangedEvent({
-        score: 12,
-        status: "You matched all the characters!",
-        clickedImgs: []
-      });
-      console.log("WON");
-      return;
+    this.setState({ clickedImgs: shuffleImages, clickCount: clickCount})
+
+    if (clickCount > highScore) {
+      this.setState({ highScore: clickCount })
     }
 
-    this.setState({
-      characters,
-      clickedImgs,
-      score: clickedImgs.length,
-      status: " "
-    });
-
-    for (let i = characters.length - 1; i > 0; i--) {
-      let k = Math.floor(Math.random() * (i + 1));
-      [characters[i], characters[j]] = [characters[j], characters[i]];
+    if( clickCount % characters.length === 0) {
+      this.setState({clickedImgs: [], wins: this.state.wins + 1})
     }
   }
+
+  this.setState({ characters: shuffleImages(characters)});
+
+  
 };
-
-
-
-
-
-
-//need a function to shuffle images once one is clicked on
 
   render() {
     return (
-      <Wrapper>
-        <Title>Clicky Game</Title>
-        {this.state.characters.map(character => (
+
+      <div>
+        <Header
+        clickedImgs={this.state.clickCount}
+        highScore={this.state.highScore}
+        wins={this.state.wins}
+        losses={this.state.losses}
+        />
+        <Title />
+      {this.state.characters.map(characters => (
           <CharacterCard
-          shuffleImages={this.shuffleImages}
-          id={characters.id}
           key={characters.id}
-          image={characters.image}
+          name={characters.name}
+          img={characters.image}
+          userClicks={this.userClicks}
+          id={characters.id}
           />
         ))}
-      </Wrapper>
+
+      </div>
     )
   }
 }

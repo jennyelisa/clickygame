@@ -6,16 +6,10 @@ function CharacterCard(props) {
         <div className="card" onClick={() => props.clickCount(props.id)}>
         <div className="img-container">
           <img alt={props.name} src={props.image} />
-          onClick={() => props.shuffleImgs(props.id)} className="shuffleScore"
+          onClick={() => props.shuffleImages(props.id)} className="shuffleImages"
         </div>
       </div>
     );
-
-    //   {/* <span onClick={() => props.removeFriend(props.id)} className="remove">
-    //     𝘅
-    //   </span> */}
-    // </div>
-    // );
 }
 
 export default CharacterCard;
