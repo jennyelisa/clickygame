@@ -1,16 +1,19 @@
   .gameHeader {
     text-align: center;
     font-size: 30px;
-    font-family: 'Rye', cursive, Arial, Helvetica, sans-serif;
+    font-family: 'Rye', cursive, Arial, Helvetica, sans-serif; 
+    color: white;
 }
 .gameHeader h1 {
     font-size: 70px;
     color: #ff6666;
-    border-bottom: 7px dotted black;
+   
 }
 
 .stats label{
     margin: 5px;
+    border-bottom: 10px dotted black;
+    margin-bottom: 30px;
 }
 
 
