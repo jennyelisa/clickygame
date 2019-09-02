@@ -37,20 +37,25 @@ userClicks = (id) => {
   let clickedImgs = this.state.clickedImgs;
   let score = this.state.score;
   let highScore = this.state.highScore;
-  console.log(shuffleImages)
-  //working but when you click second image it breaks
+  // console.log(shuffleImages)
+  
 
   if (clickedImgs.indexOf(id) === -1) {
     clickedImgs.push(id);
     this.incrementScore();
     this.charaShuffle();
-  } else if (this.state.score === 12 ){
+  } 
+  else if (this.state.score === 12 ){
     alert("You Win 🥳 🏆");
     this.setState({ 
       score: 0,
+      wins: 1,
       clickedImgs: []
     });
 
+    //getting all 12 images correct works, but it adds the highscore up not score
+    //score now increaments as you click a correct image, need to work on highscore and wins/losses
+    //at the moment score and highscore both ++ when clicked. 
   } else {
     this.setState({
       score: 0,
@@ -76,7 +81,7 @@ charaShuffle = () => {
 
       <div>
         <Header
-        clickedImgs={this.state.score}
+        score={this.state.score}
         highScore={this.state.highScore}
         wins={this.state.wins}
         losses={this.state.losses}
