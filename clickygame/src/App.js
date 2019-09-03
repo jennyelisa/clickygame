@@ -91,7 +91,7 @@ charaShuffle = () => {
           <CharacterCard
           key={characters.id}
           name={characters.name}
-          img={characters.image}
+          image={characters.image}
           userClicks={this.userClicks}
           id={characters.id}
           />
