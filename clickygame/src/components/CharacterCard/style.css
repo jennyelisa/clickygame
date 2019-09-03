@@ -2,9 +2,12 @@
    .cupheadChara {
      border: 3px solid coral;
      width: 25%;
-     height: 150px;
-     margin: 12px;
+     height: 175px;
+     margin: 10px;
+     margin-left: 5%;
      float: left;
+     text-align: center;
+     background-image: url(https://pbs.twimg.com/media/D_hBne1XoAAY3Ic.jpg);
    }
 
    .cupheadChara:hover {
