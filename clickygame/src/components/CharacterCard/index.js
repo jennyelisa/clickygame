@@ -4,9 +4,11 @@ import "./style.css"
 function CharacterCard(props) {
     return (
     
-        <div key={props.id} className="cupheadChara" onClick={() => props.userClicks(props.id)}>
+        <div key={props.id} className="cupheadChara card col-md-3" onClick={() => props.userClicks(props.id)}>
+          
           <img alt={props.name} src={props.image} />
           {/* onClick={() => props.shuffleImages(props.id)} className="shuffleImages" */}
+          
         </div>
     
     );
