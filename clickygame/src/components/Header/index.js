@@ -5,7 +5,7 @@ const logo = <img src="clickygame/src/cuphead-logo.png" />;
 
 const Header = props => (
     <div id="header" className="gameHeader">
-        <h1>{logo}</h1>
+        <h1><img src="clickygame/src/cuphead-logo.png" /></h1>
         <div className="stats">
         <label>Score: {props.score}</label>
         <label>Wins: {props.wins}</label>
