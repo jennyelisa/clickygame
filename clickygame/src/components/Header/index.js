@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.css";
 
-const logo = <img src="clickygame/src/cuphead-logo.png" />;
+// const logo = <img src="clickygame/src/cuphead-logo.png" />;
 
 const Header = props => (
     <div id="header" className="gameHeader">
-        <h1>CupHead {{ logo }}</h1>
+        <h1>CupHead</h1>
+        <img src="src/cuphead-logo.png" />
         <div className="stats">
         <label>Score: {props.score}</label>
         <label>Wins: {props.wins}</label>
