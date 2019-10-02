@@ -6,7 +6,7 @@ import "./style.css";
 const Header = props => (
     <div id="header" className="gameHeader">
         <h1>CupHead</h1>
-        <img src="src/cuphead-logo.png" />
+        {/* <img src="./src/cuphead-logo.png" /> */}
         <div className="stats">
         <label>Score: {props.score}</label>
         <label>Wins: {props.wins}</label>
